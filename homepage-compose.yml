@@ -1,0 +1,19 @@
+version: "3.3"
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    hostname: homepage
+    container_name: homepage
+    env_file:
+      - .env
+      - .env_homepage
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=$TZ
+    ports:
+      - $homepage_port:3000
+    volumes:
+      - $docker_dir/homepage/data:/app/config # Make sure your local config directory exists
+      - $docker_dir/homepage/images:/app/public/images # Make sure your local config directory exists
+    restart: unless-stopped
