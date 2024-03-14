@@ -1,0 +1,224 @@
+---
+# V5
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/services
+
+- Media:
+  - Plex:
+      icon: plex.svg
+      href: "{{HOMEPAGE_VAR_PLEX_URL}}"
+      description: Blockbuster Video
+      widget:
+        type: plex
+        fields: ["streams", "movies", "tv"]
+        url: "{{HOMEPAGE_VAR_PLEX_URL}}"
+        key: "{{HOMEPAGE_VAR_PLEX_API_TOKEN}}"
+  - Radarr:
+      icon: radarr.svg
+      href: "{{HOMEPAGE_VAR_RADARR_1_URL}}"
+      description: Radarr
+      server: optiplex
+      container: nginx-pm
+      widget:
+        type: radarr
+        url: "{{HOMEPAGE_VAR_RADARR_1_URL}}"
+        key: "{{HOMEPAGE_VAR_RADARR_1_API_KEY}}"
+        enableQueue: true # optional, defaults to false
+  - Sonarr:
+      icon: sonarr.png
+      href: "{{HOMEPAGE_VAR_SONARR_1_URL}}"
+      description: Sonarr
+      server: optiplex
+      container: sonarr
+      widget:
+        type: sonarr
+        url: "{{HOMEPAGE_VAR_SONARR_1_URL}}"
+        key: "{{HOMEPAGE_VAR_SONARR_1_API_KEY}}"
+        enableQueue: true # optional, defaults to false
+  - prowlarr:
+      icon: prowlarr.png
+      href: "{{HOMEPAGE_VAR_PROWLARR_1_URL}}"
+      description: prowlarr
+      server: optiplex
+      container: prowlarr
+      widget:
+        type: prowlarr
+        url: "{{HOMEPAGE_VAR_PROWLARR_1_URL}}"
+        key: "{{HOMEPAGE_VAR_PROWLARR_1_API_KEY}}"
+  - SABnzbd:
+      icon: sabnzbd.svg
+      href: "{{HOMEPAGE_VAR_SABNZBD_URL}}"
+      description: SABnzbd
+      widget:
+       type: sabnzbd
+       url: "{{HOMEPAGE_VAR_SABNZBD_URL}}"
+       key: "{{HOMEPAGE_VAR_SABNZBD_API_KEY}}"
+  - Radarr Anime:
+      icon: radarr.svg
+      href: "{{HOMEPAGE_VAR_RADARR_2_URL}}"
+      description: Radarr Anime
+      server: optiplex
+      container: radarr-anime
+      widget:
+        type: radarr
+        url: "{{HOMEPAGE_VAR_RADARR_2_URL}}"
+        key: "{{HOMEPAGE_VAR_RADARR_2_API_KEY}}"
+        enableQueue: true # optional, defaults to false
+  - Sonarr Anime:
+      icon: sonarr.png
+      href: "{{HOMEPAGE_VAR_SONARR_2_URL}}"
+      description: Sonarr Anime
+      server: optiplex
+      container: sonarr-anime
+      widget:
+        type: sonarr
+        url: "{{HOMEPAGE_VAR_SONARR_2_URL}}"
+        key: "{{HOMEPAGE_VAR_SONARR_2_API_KEY}}"
+        enableQueue: true # optional, defaults to false
+  - notifiarr:
+      icon: notifiarr.png
+      href: "{{HOMEPAGE_VAR_NOTIFIARR_URL}}"
+      description: notifiarr
+      server: optiplex
+      container: notifiarr
+
+
+
+- Infrastructure:
+  - UniFi:
+      icon: unifi.svg
+      href: "{{HOMEPAGE_VAR_UNIFI_NETWORK_URL}}"
+      description: UDM Pro
+      widget:
+        type: unifi
+        url: "{{HOMEPAGE_VAR_UNIFI_NETWORK_URL}}"
+        username:  "{{HOMEPAGE_VAR_UNIFI_NETWORK_USERNAME}}"
+        password:  "{{HOMEPAGE_VAR_UNIFI_NETWORK_PASSWORD}}"
+  - Nginx Proxy Manager:
+      icon: nginx-proxy-manager.png
+      href: "{{HOMEPAGE_VAR_NPM_URL}}"
+      description: Nginx Proxy Manager
+      server: optiplex
+      container: nginx-pm
+      widget:
+        type: npm
+        url: "{{HOMEPAGE_VAR_NPM_URL}}"
+        username: "{{HOMEPAGE_VAR_NPM_USER}}"
+        password: "{{HOMEPAGE_VAR_NPM_PASS}}"
+  - Portainer:
+      icon: portainer.svg
+      href: "{{HOMEPAGE_VAR_PORTAINER_EXTURL}}"
+      description: Portainer - Optiplex
+      server: optiplex
+      container: portainer
+      widget:
+        type: portainer
+        url: "{{HOMEPAGE_VAR_PORTAINER_URL}}"
+        env: "{{HOMEPAGE_VAR_PORTAINER_ENV}}"
+        key: "{{HOMEPAGE_VAR_PORTAINER_API_KEY}}"
+
+  - homebridge:
+      icon: homebridge.png
+      href: "{{HOMEPAGE_VAR_HOMEBRIDGE_URL}}"
+      description: homebridge
+      server: optiplex
+      container: homebridge
+      widget:
+        type: homebridge
+        url: "{{HOMEPAGE_VAR_HOMEBRIDGE_URL}}"
+        username: "{{HOMEPAGE_VAR_HOMEBRIDGE_USER}}"
+        password: "{{HOMEPAGE_VAR_HOMEBRIDGE_PASS}}"
+
+- DNS:
+  - DNS (Primary):
+      icon: pi-hole.svg
+      href: "{{HOMEPAGE_VAR_PIHOLE_ADMINURL_1}}"
+      description: pihole
+      widget:
+       type: pihole
+       url: "{{HOMEPAGE_VAR_PIHOLE_URL_1}}"
+       key: "{{HOMEPAGE_VAR_PIHOLE_API_KEY_1}}"
+  - DNS (Secondary):
+      icon: pi-hole.svg
+      href: "{{HOMEPAGE_VAR_PIHOLE_ADMINURL_2}}"
+      description: Optiplex
+      widget:
+        type: pihole
+        url: "{{HOMEPAGE_VAR_PIHOLE_URL_2}}"
+        key: "{{HOMEPAGE_VAR_PIHOLE_API_KEY_2}}"
+  - orbital-sync:
+      icon: pi-hole.png
+      description: orbital-sync
+      server: mini
+      container: orbital-sync
+
+- Books:
+  - calibre-web:
+      icon: calibre-web.png
+      href: "{{HOMEPAGE_VAR_CALIBREWEB_URL}}"
+      description: calibre-web
+      server: optiplex
+      container: calibre-web
+      widget:
+        type: calibreweb
+        url: "{{HOMEPAGE_VAR_CALIBREWEB_URL}}"
+        username: "{{HOMEPAGE_VAR_CALIBREWEB_USER}}"
+        password: "{{HOMEPAGE_VAR_CALIBREWEB_PASS}}"
+  - audiobookshelf:
+      icon: audiobookshelf.svg
+      href: "{{HOMEPAGE_VAR_ABS_URL}}"
+      description: audiobookshelf
+      server: optiplex
+      container: audiobookshelf
+      widget:
+        type: audiobookshelf
+        fields: ["books", "booksDuration"]
+        url: "{{HOMEPAGE_VAR_ABS_URL}}"
+        key: "{{HOMEPAGE_VAR_ABS_API_KEY}}"
+  - readarr-ebook:
+      icon: readarr.png
+      href: "{{HOMEPAGE_VAR_READARR_1_URL}}"
+      description: Readarr eBook
+      server: optiplex
+      container: readarr-ebook
+      widget:
+        type: readarr
+        url: "{{HOMEPAGE_VAR_READARR_1_URL}}"
+        key: "{{HOMEPAGE_VAR_READARR_1_API_KEY}}"
+  - readarr-audio:
+      icon: readarr.png
+      href: "{{HOMEPAGE_VAR_READARR_2_URL}}"
+      description: Readarr Audiobook
+      server: optiplex
+      container: readarr-audio
+      widget:
+        type: readarr
+        url: "{{HOMEPAGE_VAR_READARR_2_URL}}"
+        key: "{{HOMEPAGE_VAR_READARR_2_API_KEY}}"
+
+#- Applications:
+
+- Containers - Optiplex:
+  - portainer:
+      icon: portainer.png
+      href: "{{HOMEPAGE_VAR_PORTAINER_EXTURL}}"
+      description: Portainer - Optiplex
+      server: optiplex
+      container: portainer
+  - watchtower:
+      icon: watchtower.png
+      description: watchtower - Optiplex
+      server: optiplex
+      container: watchtower
+
+- Containers - Mini:
+  - portainer_agent:
+      icon: portainer.png
+      description: Portainer Agent - Mini
+      server: mini
+      container: portainer_agent
+  - watchtower:
+      icon: watchtower.png
+      description: watchtower - Mini
+      server: mini
+      container: watchtower

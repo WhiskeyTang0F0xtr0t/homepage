@@ -1,0 +1,48 @@
+---
+# V4
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/settings
+headerStyle: clean
+
+title: Homepage
+
+background:
+  image: /images/galaxy.jpg
+  blur: sm # sm, md, xl... see https://tailwindcss.com/docs/backdrop-blur
+  saturate: 100 # 0, 50, 100... see https://tailwindcss.com/docs/backdrop-saturate
+  brightness: 75 # 0, 50, 75... see https://tailwindcss.com/docs/backdrop-brightness
+  opacity: 25 # 0-100
+
+theme: dark
+color: slate
+
+useEqualHeights: true
+
+layout:
+  Infrastructure:
+    tab: Infrastructure
+    style: row
+    columns: 4
+  DNS:
+    tab: Infrastructure
+    style: row
+    columns: 3
+  Media:
+    tab: Media
+    style: row
+    columns: 4
+  Books:
+    tab: Books
+    style: row
+    columns: 4
+  Containers - Optiplex:
+    tab: Docker
+    style: row
+    columns: 4
+  Containers - Mini:
+    tab: Docker
+    style: row
+    columns: 4
+
+statusStyle: "dot"
+

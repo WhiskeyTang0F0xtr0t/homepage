@@ -1,0 +1,39 @@
+---
+# V5
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/settings
+headerStyle: clean
+
+title: WTF Homepage
+
+background:
+  image: /images/galaxy.jpg
+  blur: sm # sm, md, xl... see https://tailwindcss.com/docs/backdrop-blur
+  saturate: 100 # 0, 50, 100... see https://tailwindcss.com/docs/backdrop-saturate
+  brightness: 75 # 0, 50, 75... see https://tailwindcss.com/docs/backdrop-brightness
+  opacity: 25 # 0-100
+
+theme: dark
+color: slate
+
+useEqualHeights: true
+
+layout:
+  Infrastructure:
+    style: row
+    columns: 4
+  DNS:
+    style: row
+    columns: 3
+  Media:
+    style: row
+    columns: 4
+  Books:
+    style: row
+    columns: 4
+
+statusStyle: "dot"
+
+#providers:
+#  openweathermap: openweathermapapikey
+#  weatherapi: weatherapiapikey
